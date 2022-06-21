@@ -50,7 +50,7 @@ else {
 $global:selection.TypeText($text) 
 }
 
-#insert a new paragraph (ENTER)
+#insert a new paragraph  (ENTER)
 $global:selection.TypeParagraph()
 
 } #end Function
