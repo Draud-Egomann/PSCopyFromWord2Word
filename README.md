@@ -7,7 +7,7 @@
 # Aufgabe
 Wir sollen alles (inkl. Formatierungen , Links und co.) aus dem Body eines Word Dokuments kopieren.
 Die kopierten Daten sollen in ein anders Doc mit vorgefertigten Header und Footer eingefügt und abgespeichert werden.
-[Tux, the Linux mascot](./assets/strukturSkizze.jpg)
+![strukturSkizze](./assets/strukturSkizze.jpg)
 
 # Wie wir vorgehen
 ## Branches
@@ -15,4 +15,5 @@ Die kopierten Daten sollen in ein anders Doc mit vorgefertigten Header und Foote
 - Wenn wir einen Lösungsansatz haben wird der Branch auf `main` gepush und alle bearbeiten diesen
 
 ## Branch wechseln
-`git checkout <Euer Branch>`
+- `git checkout <Euer Branch>`
+- https://www.freecodecamp.org/news/git-switch-branch/
