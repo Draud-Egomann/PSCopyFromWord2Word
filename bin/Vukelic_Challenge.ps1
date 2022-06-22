@@ -34,12 +34,18 @@ If (($global:word.Application -eq $Null) -OR -NOT (Get-Process WinWord)) {
     $global:word.Visible = $True    
 }
 
-if ($Colorized) {
+if (1) {
     #copy the selection to the clipboard and paste
     #This is a shortcut hack that may not always work the first time
     $wshell = New-Object -ComObject Wscript.shell
+    start-sleep -Milliseconds 500
+    $wshell.SendKeys('%{TAB}')
+    start-sleep -Milliseconds 500
     #must be lower-case c otherwise you will end up sending
     #ctrl+shift+c
+    $wshell.SendKeys("^a") 
+    #timing is everything with SendKeys. This could be a lower value
+    start-sleep -Milliseconds 500
     $wshell.SendKeys("^c") 
     #timing is everything with SendKeys. This could be a lower value
     start-sleep -Milliseconds 500
@@ -60,3 +66,4 @@ $global:selection.TypeParagraph()
 
 #keyboard shortcut doesn't always work
 #$psise.CurrentPowerShellTab.AddOnsMenu.Submenus.Add("Send to Word Colorized",{Send-ToWord -Colorized},"") | Out-Null
+Copy-ToWord
