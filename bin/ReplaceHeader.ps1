@@ -13,14 +13,11 @@ Get-ChildItem -Path $sourceSrc -Recurse  | ForEach-Object {
     # Add a new document to the application
     $ExportedDoc = $WordAPI.Documents.Add($sourceSrc + $_);
     # Header and footer document
-    $TemplateDoc = $WordAPI.Documents.Add($templateSrc + "BBZW.docx");
+    $TemplateDoc = $WordAPI.Documents.Add($templateSrc + "BBWZ.docx");
     # Get the first Section of the Document object
     $ExportedSection = $ExportedDoc.Sections.Item(1);
-    # Works
-    $TemplateSection = $TemplateDoc.Sections.Item(1);
 
-    # Create a Table of Contents (ToC)
-    $Toc = $ExportedDoc.TablesOfContents.Add($ExportedSection.Range);
+
 
     $ExportedDoc.SaveAs($exportSrc + $_);
     $ExportedDoc.Close();
