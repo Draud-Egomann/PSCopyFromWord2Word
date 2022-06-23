@@ -1,12 +1,15 @@
 <# 
 Dieses Powershell Skript ersetzt den Header und Footer mit einem Template basierten Word
 Author: Dominic Tosku, Justin Urbanek, Kristyan Usarz, Luciano Zehnder
+Alias: TUUZ
 Version: 1.0
 Letzte Änderung: 23.06.22 18:41
 #>
 
-#Pfade für das Skript
-$rootSrc = "<Insert-Your-Filepath-here>"
+<# Nutzerpfade #>
+$rootSrc = "<Geben-Sie-Ihren-Dateipfad-an>"
+$templateFilesName = "template.docx"
+<# Src Variabeln #>
 $sourceSrc = ($rootSrc + "\sourceFiles\")
 $templateSrc = ($rootSrc + "\templates\")
 $exportSrc = ($rootSrc + "\exportedFiles\")
@@ -21,7 +24,7 @@ Get-ChildItem -Path $sourceSrc -Recurse  | ForEach-Object {
         # Fügt eine neue Word Datei hinzu
         $ExportedDoc = $WordAPI.Documents.Add($sourceSrc + $_);
         # Öffnet das Template Dokument
-        $TemplateDoc = $WordAPI.Documents.Add($templateSrc + "BBWZ.docx");
+        $TemplateDoc = $WordAPI.Documents.Add($templateSrc + $templateFilesName);
         #Speichert die erste Sektion der Template Word Datei
         $TemplateSection = $TemplateDoc.Sections.Item(1);
         #Speichert die erste Sektion der Ziel Word Datei
@@ -43,9 +46,11 @@ Get-ChildItem -Path $sourceSrc -Recurse  | ForEach-Object {
         $WordAPI.Quit();
     }
     catch {
-        Write-Error "Das Dokument ist schreibgeschützt. Bitte öffen sie die Dokumente manuell und aktivieren Sie die Bearbeitung."
+        Write-Error "Das Dokument ist schreibgesch�tzt. Bitte �ffen Sie die Dokumente manuell und aktivieren Sie die Bearbeitung."
         #Schliesst alle Instanzen, wenn ein Fehler auftritt
         $ExportedDoc.Close();
         $WordAPI.Quit();
     }
 }
+
+Write-Host "Das Skript ist fertig." -ForegroundColor Black -BackgroundColor Green
