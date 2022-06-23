@@ -18,8 +18,11 @@ Get-ChildItem -Path $sourceSrc -Recurse  | ForEach-Object {
     # Get the first Section of the Document object
     $ExportedSection = $ExportedDoc.Sections.Item(1);
     
-    $ExportedSection.Headers.Item(1).Range.Text = $TemplateSection.Headers.Item(1).Range.Text
+    $TemplateSection.Headers.Item(1).Range.copy($ExportedSection.Headers.Item(1).selection.range)
+    $ExportedSection.Headers.Item(1).range.PasteSpecial()
 
+    $TemplateSection.footers.Item(1).Range.copy($ExportedSection.footers.Item(1).selection.range)
+    $ExportedSection.footers.Item(1).range.PasteSpecial()
 
     $ExportedDoc.SaveAs($exportSrc + $_);
     $ExportedDoc.Close();
