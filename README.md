@@ -4,7 +4,7 @@
 - Danach klonen Sie das Repo [LINK](https://github.com/Egomann88/ExportInfoScript "LINK") oder laden sie Ordnerstruktur als ZIP herunter
 - - Wenn Sie das ZIP wählen, sollten Sie es nach dem herunterladen in einem beliebigen Verzeichnis extrahieren
 - Wurde die Ordnerstruktur richtig kopiert sollte es ungefähr so aussehen
-- [](./assets/pic1.jpg)
+["d"](./assets/pic1.jpg)
 - Klicken Sie nun Oben auf die Ordnernamen und kopieren Sie den Angezeigten Pfad. Sie werden diesen später brauchen
 - [](./assets/pic2.jpg)
 - Die Word-Dokumente, von denen die Kopf- und Fusszeile ersetz werden sollen, sollen in «SourceFiles» platziert werden
