@@ -43,7 +43,7 @@ Get-ChildItem -Path $sourceSrc -Recurse  | ForEach-Object {
         $WordAPI.Quit();
     }
     catch {
-        Write-Error "Das Dokument sind schreibgeschützt. Bitte offen sie die Dokumente manuell und aktivieren Sie die Bearbeitung."
+        Write-Error "Das Dokument ist schreibgeschützt. Bitte öffen sie die Dokumente manuell und aktivieren Sie die Bearbeitung."
         #Schliesst alle Instanzen, wenn ein Fehler auftritt
         $ExportedDoc.Close();
         $WordAPI.Quit();
