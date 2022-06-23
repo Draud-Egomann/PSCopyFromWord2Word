@@ -1,9 +1,9 @@
 <# 
 Dieses Powershell Skript ersetzt den Header und Footer mit einem Template basierten Word
-Author: Dominic Tosku, Justin Urbanek, Kristyan Usarz, Luciano Zehnder
-Alias: TUUZ
+Authors: Dominic Tosku, Justin Urbanek, Kristyan Usarz, Luciano Zehnder
+Alias: TgN
 Version: 1.0
-Letzte Änderung: 23.06.22 18:41
+Letzte Änderung: 23.06.22 23:41
 #>
 
 <# Nutzerpfade #>
