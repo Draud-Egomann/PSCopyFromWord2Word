@@ -14,10 +14,11 @@ Get-ChildItem -Path $sourceSrc -Recurse  | ForEach-Object {
     $ExportedDoc = $WordAPI.Documents.Add($sourceSrc + $_);
     # Header and footer document
     $TemplateDoc = $WordAPI.Documents.Add($templateSrc + "BBWZ.docx");
+    $TemplateSection = $TemplateDoc.Sections.Item(1);
     # Get the first Section of the Document object
     $ExportedSection = $ExportedDoc.Sections.Item(1);
     
-    $ExportedDoc.Sections.Item(1).Headers.Item(1).Range.Text = $TemplateDoc.Sections.Item(1).Headers.Item(1).Range.Text
+    $ExportedSection.Headers.Item(1).Range.Text = $TemplateSection.Headers.Item(1).Range.Text
 
 
     $ExportedDoc.SaveAs($exportSrc + $_);
