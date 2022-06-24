@@ -1,6 +1,6 @@
 <# 
 Dieses Powershell Skript ersetzt den Header und Footer mit einem Template basierten Word
-Authors: Dominic Tosku, Justin Urbanek, Kristyan Usarz, Luciano Zehnder
+Authors: Dominic Tosku, Justin Urbanek
 Alias: TgN
 Version: 1.0
 Letzte Änderung: 23.06.22 23:41
