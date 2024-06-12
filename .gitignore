@@ -1,0 +1,6 @@
+**/*.docx
+**/*.zip
+/bck
+/export
+/source
+/template
